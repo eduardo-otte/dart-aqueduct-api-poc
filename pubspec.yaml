@@ -1,0 +1,20 @@
+name: dart_aqueduct_poc
+description: An empty Aqueduct application.
+version: 0.0.1
+author: Eduardo Otte <eduardo.otte@ebanx.com>
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  aqueduct: 3.3.0+1
+  dartz: ^0.9.1
+  equatable: ^1.2.3
+  get_it: ^4.0.4
+  json_annotation: ^3.0.1
+
+dev_dependencies:
+  test: ^1.0.0
+  aqueduct_test: ^1.0.0
+  build_runner: ^1.9.0
+  json_serializable: ^3.2.2
