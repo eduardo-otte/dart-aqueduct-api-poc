@@ -11,8 +11,9 @@ class TCISignupController extends ResourceController {
 
   @Operation.post()
   Future<Response> signupUser(
-    @Bind.body() TCISignupRequest signupRequest,
+    @Bind.body() Map<String, dynamic> signupRequestBody,
   ) async {
+    final signupRequest = TCISignupRequest.fromJson(signupRequestBody);
     final failureOrSuccess = await signupTCIUserUsecase(signupRequest);
 
     return failureOrSuccess.fold(
