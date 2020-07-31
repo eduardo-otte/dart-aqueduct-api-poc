@@ -12,6 +12,7 @@ dependencies:
   equatable: ^1.2.3
   get_it: ^4.0.4
   json_annotation: ^3.0.1
+  uuid: ^2.2.0
 
 dev_dependencies:
   test: ^1.0.0

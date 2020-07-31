@@ -470,6 +470,12 @@
       "languageVersion": "2.4"
     },
     {
+      "name": "uuid",
+      "rootUri": "file:///home/otte/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "vm_service_client",
       "rootUri": "file:///home/otte/.pub-cache/hosted/pub.dartlang.org/vm_service_client-0.2.6+3",
       "packageUri": "lib/",
@@ -500,7 +506,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-07-30T05:49:51.029262Z",
+  "generated": "2020-07-31T04:14:35.069169Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }
