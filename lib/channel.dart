@@ -1,5 +1,8 @@
 import 'dart_aqueduct_poc.dart';
+import 'infra/controllers/audit_message_controller.dart';
+import 'infra/controllers/authorization_controller.dart';
 import 'infra/controllers/br_user_controller.dart';
+import 'infra/controllers/flow_identifier_controller.dart';
 import 'infra/controllers/tci_signup_controller.dart';
 import 'injection_container.dart';
 
@@ -21,16 +24,17 @@ class DartAqueductPocChannel extends ApplicationChannel {
     final router = Router();
 
     router
-        .route('/br/users/[:id]') //
+        .route('/br/users/[:id]')
+        .link(() => sl.get<AuthorizationController>())
+        .link(() => sl.get<FlowIdentifierController>())
+        .link(() => sl.get<AuditMessageController>())
         .link(() => sl.get<BRUserController>());
 
     router
-        .route('/tci/signup') //
+        .route('/tci/signup')
+        .link(() => sl.get<FlowIdentifierController>())
+        .link(() => sl.get<AuditMessageController>())
         .link(() => sl.get<TCISignupController>());
-
-    router.route("/example").linkFunction((request) async {
-      return Response.ok({"key": "value"});
-    });
 
     return router;
   }
