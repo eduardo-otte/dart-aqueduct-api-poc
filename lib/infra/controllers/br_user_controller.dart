@@ -9,11 +9,12 @@ class BRUserController extends ResourceController {
   final FindBRUserUsecase findBRUserUsecase;
 
   @Operation.get('id')
-  Future<Response> getUserById(@Bind.path("id") String userId) async {
+  Future<Response> getUserById(@Bind.path('id') String userId) async {
+    logger.info('Finding user');
     final failureOrUser = await findBRUserUsecase(userId);
 
     return failureOrUser.fold(
-      (failure) => throw Response.notFound(),
+      (failure) => Response.notFound(),
       (user) => Response.ok(user),
     );
   }
